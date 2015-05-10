@@ -6,14 +6,19 @@ bufferSize = tamanhoPacote
 dados = bytearray(tamanhoPacote-49) #tamanho base da estrutura é 49Bytes
 sizeData = sys.getsizeof(dados)
 
-port = 13000
+port = 13000 #Porta padrão definiada para o servidor
 
 def main():
     print 'Digite o tipo de terminal'
     print '1 - Cliente'
     print '2 - Servidor'
-
+    
     op = input()
+
+    tamanhoPacote = input('Tamanho do pacote = ')
+    bufferSize = tamanhoPacote
+    dados = bytearray(tamanhoPacote-49) #tamanho base da estrutura é 49Bytes
+    sizeData = sys.getsizeof(dados)
 
     if op == 1:
         client()
